@@ -253,7 +253,7 @@ footer .foot-brand{display:block;margin-bottom:8px;font-family:var(--serif);font
     </div>
     <div class="room-grid">
       {{#rooms.items}}
-      <div class="room-card reveal"><img src="{{image}}" alt="{{name}}">
+      <div class="room-card reveal"><img src="{{{image}}}" alt="{{name}}">
         <div class="rc-body"><h3>{{name}}</h3><p>{{blurb}}</p>
         <div class="rc-tags">{{#tags}}<span>{{.}}</span>{{/tags}}</div></div></div>
       {{/rooms.items}}

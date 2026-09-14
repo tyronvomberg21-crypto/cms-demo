@@ -19,7 +19,7 @@
       {
         "name": "The Garden Room",
         "blurb": "Button-back armchairs, a grand mahogany wardrobe and doors to the tranquil garden.",
-        "image": "/media/chocolate-hazelnut-chiffon.jpg",
+        "image": "media/chocolate-hazelnut-chiffon.jpg",
         "tags": [
           "En-suite",
           "Queen bed",
@@ -29,7 +29,7 @@
       {
         "name": "The Heritage Room",
         "blurb": "Crisp white linen, morning tea brought on a silver service, and the quiet of Eastcliff.",
-        "image": "/media/strip3.jpg",
+        "image": "media/strip3.jpg",
         "tags": [
           "En-suite",
           "King/Twin",
@@ -39,7 +39,7 @@
       {
         "name": "The Mountain Room",
         "blurb": "Gilt mirrors and soft light with the Klein River mountains standing over the rooftops.",
-        "image": "/media/11.jpg",
+        "image": "media/11.jpg",
         "tags": [
           "En-suite",
           "Queen bed",
