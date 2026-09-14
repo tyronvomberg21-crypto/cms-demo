@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "kicker": "Eastcliff · Hermanus · Whale Coast",
+    "title": "A gracious Cape Dutch home on the whale coast",
+    "lede": "Five luxury en-suite rooms, a full breakfast on the veranda, a quiet garden and pool beneath the Klein River mountains — a short stroll from the cliff paths of Walker Bay."
+  },
+  "score": {
+    "number": "9.6",
+    "label": "295 verified guest ratings"
+  },
+  "story": {
+    "heading": "Old-world grace, hosted the way Hermanus used to be",
+    "para1": "Behind its whitewashed gables in the leafy Eastcliff quarter, the Dorpshuys is a house of persian runners, button-back chairs and morning light — restored and run personally by Cecilia and Koos Pretorius.",
+    "para2": "Both are experienced divers and qualified national tour guides, which means your hosts don't just check you in — they map out your whale watching, your Gansbaai shark dive and your Hemel-en-Aarde wine afternoon like locals who've done it all themselves."
+  },
+  "rooms": {
+    "heading": "Five rooms, each with its own character",
+    "items": [
+      {
+        "name": "The Garden Room",
+        "blurb": "Button-back armchairs, a grand mahogany wardrobe and doors to the tranquil garden.",
+        "image": "media/strip2.jpg",
+        "tags": [
+          "En-suite",
+          "Queen bed",
+          "Garden view"
+        ]
+      },
+      {
+        "name": "The Heritage Room",
+        "blurb": "Crisp white linen, morning tea brought on a silver service, and the quiet of Eastcliff.",
+        "image": "media/strip3.jpg",
+        "tags": [
+          "En-suite",
+          "King/Twin",
+          "Antique furnished"
+        ]
+      },
+      {
+        "name": "The Mountain Room",
+        "blurb": "Gilt mirrors and soft light with the Klein River mountains standing over the rooftops.",
+        "image": "media/11.jpg",
+        "tags": [
+          "En-suite",
+          "Queen bed",
+          "Mountain view"
+        ]
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "quote": "Beautiful old house, immaculate rooms and the warmest welcome we've had anywhere on the Garden Route trip.",
+      "who": "Guest review · Booking platform"
+    },
+    {
+      "quote": "Breakfast on the veranda with the mountains behind — worth the stay on its own. Cecilia's local tips made our whole weekend.",
+      "who": "Guest review · Booking platform"
+    },
+    {
+      "quote": "Walking distance to everything, yet completely quiet at night. The kind of guesthouse you plan a return trip around.",
+      "who": "Guest review · Booking platform"
+    }
+  ],
+  "contact": {
+    "whatsapp_intl": "27785961488",
+    "whatsapp_display": "078 596 1488"
+  }
+}

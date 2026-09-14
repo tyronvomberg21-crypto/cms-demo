@@ -1,0 +1,56 @@
+media:
+  input: media
+  output: /media
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: content/site.json
+    fields:
+      - name: hero
+        label: Top of the page
+        type: object
+        fields:
+          - { name: kicker, label: Small line above the headline, type: string }
+          - { name: title, label: Headline, type: string }
+          - { name: lede, label: Intro paragraph, type: text }
+      - name: score
+        label: Rating badge
+        type: object
+        fields:
+          - { name: number, label: Score, type: string }
+          - { name: label, label: Label, type: string }
+      - name: story
+        label: About the house
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: para1, label: Paragraph 1, type: text }
+          - { name: para2, label: Paragraph 2, type: text }
+      - name: rooms
+        label: Rooms
+        type: object
+        fields:
+          - { name: heading, label: Section heading, type: string }
+          - name: items
+            label: Room cards
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Room name, type: string }
+              - { name: blurb, label: One-line description, type: text }
+              - { name: image, label: Photo, type: image }
+              - { name: tags, label: Tags, type: string, list: true }
+      - name: reviews
+        label: Guest reviews
+        type: object
+        list: true
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: who, label: Attribution, type: string }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: whatsapp_intl, label: WhatsApp number (international, digits only e.g. 27821234567), type: string }
+          - { name: whatsapp_display, label: WhatsApp number as shown on the page, type: string }
