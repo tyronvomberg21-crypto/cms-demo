@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hermanus Dorpshuys — Luxury Guesthouse on the Whale Coast, Hermanus</title>
+<meta name="description" content="Hermanus Dorpshuys — a gracious Cape Dutch guesthouse in Eastcliff, Hermanus. 5 luxury en-suite rooms, full breakfast, pool & garden. Rated 9.6/10. Book direct with Cecilia & Koos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. BASE — tokens, reset, layout ===== */
+:root{
+  --bay:#12333c;        /* deep Walker Bay ink */
+  --bay-mid:#1d4e56;
+  --whitewash:#f7f3ea;  /* gable whitewash */
+  --paper:#fffdf8;
+  --charcoal:#26292b;   /* thatch charcoal */
+  --brass:#b08d4f;
+  --brass-soft:#c9ad7c;
+  --line:rgba(18,51,60,.14);
+  --serif:'Gambetta',Georgia,serif;
+  --sans:'Schibsted Grotesk',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--whitewash);line-height:1.65;font-size:16.5px}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;color:var(--bay)}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* concept ribbon */
+.ribbon{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bay);color:var(--whitewash);text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px}
+.ribbon strong{color:var(--brass-soft);font-weight:600}
+
+/* nav */
+nav{position:fixed;top:36px;left:0;right:0;z-index:150;display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;transition:background .35s,box-shadow .35s}
+nav.scrolled{background:rgba(247,243,234,.96);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(8px)}
+nav .brand{font-family:var(--serif);font-size:21px;letter-spacing:.02em;color:var(--whitewash);text-decoration:none;transition:color .35s}
+nav.scrolled .brand{color:var(--bay)}
+nav .brand em{font-style:normal;color:var(--brass-soft)}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{text-decoration:none;font-size:13.5px;letter-spacing:.09em;text-transform:uppercase;color:rgba(247,243,234,.85);transition:color .35s}
+nav.scrolled .navlinks a{color:var(--bay-mid)}
+.navlinks a:hover{color:var(--brass)}
+.nav-cta{background:var(--brass);color:#fff!important;padding:10px 20px;border-radius:2px}
+.nav-cta:hover{background:var(--bay-mid);color:#fff!important}
+@media(max-width:820px){.navlinks a:not(.nav-cta){display:none}}
+
+/* hero */
+/* ===== 2. SECTIONS — hero, story, rooms, reviews, contact ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--whitewash);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url('media/trip01.jpg') center 30%/cover no-repeat;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,51,60,.45) 0%,rgba(18,51,60,.75) 100%);backdrop-filter:contrast(1.05);-webkit-backdrop-filter:contrast(1.05);z-index:-1}
+.hero-inner{width:100%;padding:0 5vw 9vh}
+.hero .kicker{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-soft);margin-bottom:18px}
+.hero h1{font-size:clamp(42px,7vw,86px);line-height:1.04;color:var(--whitewash);font-weight:500;max-width:12ch}
+.hero p.lede{margin-top:22px;max-width:52ch;font-size:18px;color:rgba(247,243,234,.92)}
+.hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+/* ===== 3. COMPONENTS — buttons, frames, cards ===== */
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.03em;padding:15px 28px;border-radius:2px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:#1faa59;color:#fff}
+.btn-ghost{border:1px solid rgba(247,243,234,.55);color:var(--whitewash)}
+.btn-ghost:hover{background:rgba(247,243,234,.12)}
+.hero-score{position:absolute;right:5vw;bottom:9vh;text-align:right;display:none}
+@media(min-width:900px){.hero-score{display:block}}
+.hero-score .num{font-family:var(--serif);font-size:56px;line-height:1;color:var(--brass-soft)}
+.hero-score .lbl{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,243,234,.8);margin-top:6px}
+
+/* gable divider motif */
+.gable{display:block;width:100%;height:38px;fill:var(--whitewash)}
+.gable.on-bay{fill:var(--bay)}
+
+/* sections */
+section{padding:96px 5vw}
+.wrap{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.12;margin-bottom:20px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:860px){.two-col{grid-template-columns:1fr;gap:36px}}
+.frame{position:relative;border:1px solid rgba(18,51,60,.12);border-radius:2px;padding:8px;background:var(--whitewash);box-shadow:0 12px 32px rgba(18,51,60,.08)}
+.frame img{width:100%;border-radius:1px;display:block}
+
+/* story */
+.story p+p{margin-top:16px}
+.story .sig{margin-top:26px;font-family:var(--serif);font-size:22px;color:var(--bay-mid);font-style:italic}
+.badges{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.badge{border-top:2px solid var(--brass);padding-top:10px;min-width:130px}
+.badge .b-num{font-family:var(--serif);font-size:30px;color:var(--bay)}
+.badge .b-lbl{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--bay-mid)}
+
+/* rooms */
+.rooms{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+@media(max-width:860px){.room-grid{grid-template-columns:1fr}}
+.room-card{background:var(--whitewash);border:1px solid var(--line);border-radius:2px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.room-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px -18px rgba(18,51,60,.35)}
+.room-card img{height:250px;width:100%;object-fit:cover}
+.room-card .rc-body{padding:24px}
+.room-card h3{font-size:23px;margin-bottom:8px}
+.room-card p{font-size:15px;color:#4a5054}
+.rc-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.rc-tags span{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;background:rgba(176,141,79,.12);color:var(--brass);padding:4px 10px;border-radius:2px}
+
+/* breakfast band */
+.band{background:var(--bay);color:var(--whitewash)}
+.band .eyebrow{color:var(--brass-soft)}
+.band h2{color:var(--whitewash)}
+.band p{color:rgba(247,243,234,.85)}
+.band .frame{border-color:rgba(201,173,124,.35);background:transparent}
+.menu-list{margin-top:24px;border-top:1px solid rgba(247,243,234,.18)}
+.menu-list li{list-style:none;display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid rgba(247,243,234,.18);font-size:15.5px}
+.menu-list li em{font-style:normal;color:var(--brass-soft);font-family:var(--serif)}
+
+/* activities */
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+@media(max-width:860px){.act-grid{grid-template-columns:1fr}}
+.act{border:1px solid var(--line);background:var(--paper);border-radius:2px;padding:30px 26px;transition:transform .3s,box-shadow .3s}
+.act:hover{transform:translateY(-5px);box-shadow:0 18px 40px -18px rgba(18,51,60,.3)}
+.act .a-ico{font-size:26px;margin-bottom:14px}
+.act h3{font-size:21px;margin-bottom:8px}
+.act p{font-size:15px;color:#4a5054}
+.act .a-dist{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+
+/* gallery strip */
+.gallery{padding:0 0 0;background:var(--whitewash)}
+.g-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 5vw}
+@media(max-width:700px){.g-strip{grid-template-columns:repeat(2,1fr)}}
+.g-strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px;transition:transform .35s}
+.g-strip img:hover{transform:scale(1.03)}
+
+/* direct */
+.direct{background:var(--paper);border-top:1px solid var(--line)}
+.direct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px}
+@media(max-width:860px){.direct-grid{grid-template-columns:1fr}}
+.d-card{border-top:2px solid var(--brass);padding-top:18px}
+.d-card h3{font-size:20px;margin-bottom:8px}
+.d-card p{font-size:15px;color:#4a5054}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:28px;position:relative}
+.rev::before{content:"“";position:absolute;top:8px;left:20px;font-family:var(--serif);font-size:70px;color:rgba(176,141,79,.25);line-height:1}
+.rev p{font-size:15.5px;font-style:italic;color:#3d4348;position:relative}
+.rev .who{margin-top:18px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);font-style:normal}
+.score-line{display:flex;align-items:baseline;gap:16px;margin-top:44px;justify-content:center;flex-wrap:wrap}
+.score-line .big{font-family:var(--serif);font-size:44px;color:var(--bay)}
+.score-line span{color:#4a5054;font-size:15px}
+
+/* faq */
+.faq{background:var(--bay);color:var(--whitewash)}
+.faq .eyebrow{color:var(--brass-soft)}
+.faq h2{color:var(--whitewash)}
+.faq details{border-bottom:1px solid rgba(247,243,234,.18);padding:20px 0}
+.faq summary{cursor:pointer;font-family:var(--serif);font-size:20px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;color:var(--brass-soft);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:12px;color:rgba(247,243,234,.85);font-size:15.5px;max-width:70ch}
+
+/* location + cta */
+.loc .two-col{align-items:start}
+.loc-list{margin-top:20px}
+.loc-list li{list-style:none;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px;display:flex;gap:12px}
+.loc-list li b{color:var(--bay);min-width:0}
+.map-frame{border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.map-frame iframe{display:block;width:100%;height:380px;border:0;filter:saturate(.85)}
+
+.final{background:linear-gradient(rgba(18,51,60,.88),rgba(18,51,60,.88)),url('media/strip4.jpg') center/cover;color:var(--whitewash);text-align:center}
+.final h2{color:var(--whitewash);max-width:20ch;margin:0 auto 16px}
+.final p{max-width:54ch;margin:0 auto;color:rgba(247,243,234,.88)}
+.final .hero-ctas{justify-content:center}
+.final .tel{margin-top:22px;font-size:15px;color:rgba(247,243,234,.75)}
+.final .tel a{color:var(--brass-soft);text-decoration:none;font-weight:600}
+
+/* footer */
+footer{background:#0d262d;color:rgba(247,243,234,.65);padding:38px 5vw;text-align:center;font-size:14px}
+footer a{color:var(--brass-soft);text-decoration:none;font-weight:600}
+footer .foot-brand{display:block;margin-bottom:8px;font-family:var(--serif);font-size:18px;color:var(--whitewash)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* floating wa */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:180;width:56px;height:56px;border-radius:50%;background:#1faa59;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Concept mockup — by <strong>Joshua.digital</strong> · not the live site (yet)</div>
+
+<nav id="nav">
+  <a class="brand" href="#top">Hermanus <em>Dorpshuys</em></a>
+  <div class="navlinks">
+    <a href="#story">The House</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#breakfast">Breakfast</a>
+    <a href="#hermanus">Hermanus</a>
+    <a href="#location">Find Us</a>
+    <a class="nav-cta" href="https://wa.me/{{contact.whatsapp_intl}}?text=Hi%20Cecilia%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Hermanus%20Dorpshuys">Book Direct</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">{{hero.kicker}}</p>
+    <h1>{{hero.title}}</h1>
+    <p class="lede">{{hero.lede}}</p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa" href="https://wa.me/{{contact.whatsapp_intl}}?text=Hi%20Cecilia%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Hermanus%20Dorpshuys">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1a16 16 0 0 1-1.6-.6 12.6 12.6 0 0 1-4.8-4.3 5.5 5.5 0 0 1-1.1-2.9 3.1 3.1 0 0 1 1-2.3.9.9 0 0 1 .7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.2-.2.3 0 .6a8.4 8.4 0 0 0 1.6 2 7.6 7.6 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4a2.4 2.4 0 0 1-.3 1Z"/></svg>
+        WhatsApp Cecilia
+      </a>
+      <a class="btn btn-ghost" href="#rooms">See the rooms</a>
+    </div>
+  </div>
+  <div class="hero-score">
+    <div class="num">{{score.number}}</div>
+    <div class="lbl">{{score.label}}</div>
+  </div>
+</header>
+
+<section id="story" class="story">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <p class="eyebrow">The House &amp; Your Hosts</p>
+      <h2>{{story.heading}}</h2>
+      <p>{{story.para1}}</p>
+      <p>{{story.para2}}</p>
+      <p class="sig">— Cecilia &amp; Koos, your hosts</p>
+      <div class="badges">
+        <div class="badge"><div class="b-num">5</div><div class="b-lbl">Luxury en-suite rooms</div></div>
+        <div class="badge"><div class="b-num">9.6<span style="font-size:16px">/10</span></div><div class="b-lbl">Guest rating</div></div>
+        <div class="badge"><div class="b-num">2017</div><div class="b-lbl">Outstanding Service Award</div></div>
+      </div>
+    </div>
+    <div class="frame reveal d1"><img src="media/05.jpg" alt="The entrance hall of Hermanus Dorpshuys with persian runners and antique furniture" style="aspect-ratio:1;object-fit:cover"></div>
+  </div>
+</section>
+
+<section id="rooms" class="rooms">
+  <div class="wrap">
+    <div class="reveal" style="max-width:640px">
+      <p class="eyebrow">The Rooms</p>
+      <h2>{{rooms.heading}}</h2>
+      <p>Every room is en-suite and individually furnished with antiques, fine linen and garden or mountain outlooks — comfort first, hotel-sameness never.</p>
+    </div>
+    <div class="room-grid">
+      {{#rooms.items}}
+      <div class="room-card reveal"><img src="{{{image}}}" alt="{{name}}">
+        <div class="rc-body"><h3>{{name}}</h3><p>{{blurb}}</p>
+        <div class="rc-tags">{{#tags}}<span>{{.}}</span>{{/tags}}</div></div></div>
+      {{/rooms.items}}
+    </div>
+  </div>
+</section>
+
+<section id="breakfast" class="band">
+  <div class="wrap two-col">
+    <div class="frame reveal"><img src="media/strip4.jpg" alt="Veranda dining with wicker chairs and french doors" style="aspect-ratio:1;object-fit:cover"></div>
+    <div class="reveal d1">
+      <p class="eyebrow">Mornings at the Dorpshuys</p>
+      <h2>Breakfast on the veranda, mountains for company</h2>
+      <p>A full English breakfast is served every morning in the dining room or out on the veranda, overlooking the pool, the garden and the Klein River mountains beyond.</p>
+      <ul class="menu-list">
+        <li>Full English breakfast, cooked to order <em>every morning</em></li>
+        <li>Fresh fruit, yoghurts &amp; home baking <em>daily table</em></li>
+        <li>Veranda or dining-room seating <em>your choice</em></li>
+        <li>Pool &amp; garden, open to guests all day <em>always</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="gallery">
+  <div class="g-strip">
+    <img class="reveal" src="media/strip1.jpg" alt="Whitewashed Cape Dutch exterior of Hermanus Dorpshuys">
+    <img class="reveal d1" src="media/07.jpg" alt="Breakfast table with white linen">
+    <img class="reveal d2" src="media/01.jpg" alt="En-suite bathroom vanity">
+    <img class="reveal d3" src="media/11.jpg" alt="Gilt mirror detail in a guest room">
+  </div>
+</div>
+
+<section id="hermanus">
+  <div class="wrap">
+    <div class="reveal" style="max-width:640px">
+      <p class="eyebrow">On Your Doorstep</p>
+      <h2>The best of the whale coast, minutes away</h2>
+      <p>From Hill Street you can walk to the village, the cliff paths and the sea. Your hosts — both qualified tour guides — will point you to the rest.</p>
+    </div>
+    <div class="act-grid">
+      <div class="act reveal"><div class="a-ico">🐋</div><h3>Whale watching</h3><p>Southern right whales calve in Walker Bay from June to November — watch them breach from the cliff path, no boat required.</p><span class="a-dist">Walk from the house</span></div>
+      <div class="act reveal d1"><div class="a-ico">🦈</div><h3>Shark cage diving</h3><p>Gansbaai's famous cage-diving fleet is a short drive down the coast. Cecilia &amp; Koos are divers themselves — ask them who to book with.</p><span class="a-dist">±30 min drive</span></div>
+      <div class="act reveal d2"><div class="a-ico">🍷</div><h3>Hemel-en-Aarde wines</h3><p>The celebrated valley of Pinot Noir and Chardonnay starts just outside town — an easy, beautiful afternoon of tastings.</p><span class="a-dist">±10 min drive</span></div>
+      <div class="act reveal"><div class="a-ico">⛳</div><h3>27-hole golf</h3><p>Hermanus Golf Club's 27 holes sit in Eastcliff itself, practically around the corner from your room.</p><span class="a-dist">Walking distance</span></div>
+      <div class="act reveal d1"><div class="a-ico">🥾</div><h3>Cliff path &amp; beaches</h3><p>12 km of coastal path, rock pools and blue-flag beaches — start at Gearing's Point and follow the sea.</p><span class="a-dist">Walk from the house</span></div>
+      <div class="act reveal d2"><div class="a-ico">🍽️</div><h3>Village restaurants</h3><p>Midtown Hermanus — boutiques, galleries, markets and some of the Overberg's best kitchens — is a gentle stroll away.</p><span class="a-dist">Walking distance</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="direct">
+  <div class="wrap">
+    <div class="reveal" style="max-width:640px">
+      <p class="eyebrow">Why Book Direct</p>
+      <h2>Deal with your hosts, not a platform</h2>
+    </div>
+    <div class="direct-grid">
+      <div class="d-card reveal"><h3>Best rate, no middleman</h3><p>Booking sites add commission on top. Book directly with Cecilia &amp; Koos and the direct-booking benefit stays in your pocket.</p></div>
+      <div class="d-card reveal d1"><h3>A real person answers</h3><p>One WhatsApp and you're talking to your actual host — special requests, late arrivals, local advice, all sorted before you arrive.</p></div>
+      <div class="d-card reveal d2"><h3>Flexible, human arrangements</h3><p>Extra nights, early breakfasts, tour bookings through your guide-qualified hosts — things a booking engine can't do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="reveal" style="max-width:640px;margin:0 auto;text-align:center">
+      <p class="eyebrow">Guest Words</p>
+      <h2>Rated 9.6 out of 10</h2>
+    </div>
+    <div class="rev-grid">
+      {{#reviews}}
+      <div class="rev reveal"><p>{{quote}}</p><div class="who">{{who}}</div></div>
+      {{/reviews}}
+    </div>
+    <div class="score-line reveal"><span class="big">9.6/10</span><span>across 295 verified guest ratings on major booking platforms</span></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap" style="max-width:820px">
+    <p class="eyebrow">Good to Know</p>
+    <h2>Questions guests ask</h2>
+    <details open><summary>How do I book?</summary><p>WhatsApp or phone Cecilia directly — tell her your dates and how many guests, and she'll confirm availability and the best direct rate. WhatsApp <a href="https://wa.me/{{contact.whatsapp_intl}}" style="color:var(--brass-soft)">{{contact.whatsapp_display}}</a> or call <a href="tel:+27283130441" style="color:var(--brass-soft)">028 313 0441</a>.</p></details>
+    <details><summary>Are all rooms en-suite?</summary><p>Yes — all five luxury rooms have their own en-suite bathrooms, and each is individually furnished.</p></details>
+    <details><summary>Is breakfast included?</summary><p>A full English breakfast is served daily in the dining room or on the veranda overlooking the pool and mountains. Confirm inclusion for your rate when you book.</p></details>
+    <details><summary>When is whale season?</summary><p>Southern right whales are in Walker Bay roughly June to November, with peak calving season around August–October. Hermanus is one of the best land-based whale-watching spots on earth.</p></details>
+    <details><summary>Can you help arrange tours?</summary><p>Gladly — your hosts are qualified national tour guides and experienced divers, and will happily arrange whale trips, shark cage diving, wine routes and more.</p></details>
+  </div>
+</section>
+
+<section id="location" class="loc">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <p class="eyebrow">Find Us</p>
+      <h2>Eastcliff, between the mountains and the sea</h2>
+      <ul class="loc-list">
+        <li><b>Address</b> 20 Hill Street, Eastcliff, Hermanus 7200</li>
+        <li><b>WhatsApp</b> <a href="https://wa.me/{{contact.whatsapp_intl}}" style="color:var(--brass);text-decoration:none;font-weight:600">{{contact.whatsapp_display}}</a></li>
+        <li><b>Phone</b> <a href="tel:+27283130441" style="color:var(--brass);text-decoration:none;font-weight:600">028 313 0441</a></li>
+        <li><b>From Cape Town</b> ±90 minutes via the R43 (or the spectacular Clarence Drive)</li>
+        <li><b>Parking</b> Secure on-site parking for guests</li>
+      </ul>
+    </div>
+    <div class="map-frame reveal d1">
+      <iframe title="Map — Hermanus Dorpshuys, 20 Hill Street, Eastcliff, Hermanus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=20%20Hill%20Street%2C%20Eastcliff%2C%20Hermanus%207200&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <p class="eyebrow" style="color:var(--brass-soft)">Book Your Stay</p>
+    <h2>The whales are waiting. So are Cecilia &amp; Koos.</h2>
+    <p>Send your dates on WhatsApp and get a personal reply from your hosts — with the best direct rate, always.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa" href="https://wa.me/{{contact.whatsapp_intl}}?text=Hi%20Cecilia%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Hermanus%20Dorpshuys">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1a16 16 0 0 1-1.6-.6 12.6 12.6 0 0 1-4.8-4.3 5.5 5.5 0 0 1-1.1-2.9 3.1 3.1 0 0 1 1-2.3.9.9 0 0 1 .7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.2-.2.3 0 .6a8.4 8.4 0 0 0 1.6 2 7.6 7.6 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4a2.4 2.4 0 0 1-.3 1Z"/></svg>
+        WhatsApp your dates
+      </a>
+      <a class="btn btn-ghost" href="tel:+27283130441">Call 028 313 0441</a>
+    </div>
+    <p class="tel">Prefer to talk? Cecilia answers on <a href="tel:+27283130441">028 313 0441</a></p>
+  </div>
+</section>
+
+<footer>
+  <span class="foot-brand">Hermanus Dorpshuys · Eastcliff, Hermanus</span>
+  Designed &amp; Developed by <a href="https://joshuavomberg.co.za" target="_blank" rel="noopener">Joshua.digital</a>
+</footer>
+
+<a class="wa-float" href="https://wa.me/{{contact.whatsapp_intl}}?text=Hi%20Cecilia%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Hermanus%20Dorpshuys" aria-label="WhatsApp Hermanus Dorpshuys">
+  <svg viewBox="0 0 24 24"><path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1a16 16 0 0 1-1.6-.6 12.6 12.6 0 0 1-4.8-4.3 5.5 5.5 0 0 1-1.1-2.9 3.1 3.1 0 0 1 1-2.3.9.9 0 0 1 .7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.2-.2.3 0 .6a8.4 8.4 0 0 0 1.6 2 7.6 7.6 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4a2.4 2.4 0 0 1-.3 1Z"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
